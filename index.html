@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naidu Gari Kunda Biryani | Student Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="target-body">
+
+    <main class="login-card">
+        <!-- Brand -->
+        <div class="brand">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎓</div>
+            <h1>Naidu Gari Kunda Biryani</h1>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin-top: 0.4rem;">Hotel Portal · Secure Access</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tab-bar">
+            <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">Login</button>
+            <button class="tab-btn" id="tabSignup" onclick="switchTab('signup')">Sign Up</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="tab-panel active">
+            <div class="input-group">
+                <label for="loginUser">Username</label>
+                <input type="text" id="loginUser" placeholder="Enter username" required autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="loginPass">Password</label>
+                <input type="password" id="loginPass" placeholder="••••••••" required autocomplete="off">
+            </div>
+            <button type="submit" class="btn" id="loginBtn">Authorize Access</button>
+            <div id="loginMsg" class="form-msg"></div>
+        </form>
+
+        <!-- Sign Up Form -->
+        <form id="signupForm" class="tab-panel">
+            <div class="input-group">
+                <label for="signupUser">Username</label>
+                <input type="text" id="signupUser" placeholder="Choose a username" required autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="signupPass">Password</label>
+                <input type="password" id="signupPass" placeholder="••••••••" required autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="signupPassConfirm">Confirm Password</label>
+                <input type="password" id="signupPassConfirm" placeholder="••••••••" required autocomplete="off">
+            </div>
+            <button type="submit" class="btn" id="signupBtn" style="background: var(--secondary);">Create Account</button>
+            <div id="signupMsg" class="form-msg"></div>
+        </form>
+
+        <p style="margin-top: 1.5rem; text-align: center; font-size: 0.75rem; color: var(--text-muted); opacity: 0.6;">
+            © 2026 Naidu Gari Kunda Biryani. Unauthorized access is strictly prohibited.
+        </p>
+    </main>
+
+    <!-- Hidden elements kept for attacker dashboard compatibility -->
+    <span id="currentPassDisplay" style="display:none;"></span>
+    <span id="setPasswordMsg" style="display:none;"></span>
+    <form id="setPasswordForm" style="display:none;"><input type="text" id="newPassword"></form>
+
+    <script src="app.js"></script>
+</body>
+</html>

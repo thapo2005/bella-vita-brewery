@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BruteForce Terminal v1.0</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="attacker-body">
+
+    <div class="terminal">
+        <header class="terminal-header">
+            <span class="terminal-title">TERMINAL@ATTACK-MACHINE: ~/bruteforce</span>
+            <div style="display: flex; gap: 0.5rem;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f;"></div>
+            </div>
+        </header>
+
+        <section class="controls">
+            <button id="startBtn" class="btn-attacker">▶ START ATTACK</button>
+            <button id="resetBtn" class="btn-attacker">↺ RESET</button>
+            <div style="flex: 1;"></div>
+            <div style="color: var(--hacker-green); font-family: 'Fira Code', monospace; display: flex; align-items: center; gap: 0.5rem;">
+                STATUS: <span id="statusIndicator">READY</span>
+            </div>
+        </section>
+
+        <!-- Target Config -->
+        <section style="display: flex; align-items: center; gap: 2rem; padding: 0.75rem 1.5rem; background: #0d0d0d; border-bottom: 1px solid #1f2937; flex-wrap: wrap;">
+            <span style="color: #4b5563; font-family: 'Fira Code', monospace; font-size: 0.8rem;">TARGET ADMIN:
+                <code id="currentAdminDisplay" style="color: #38bdf8; font-family: 'Fira Code', monospace; font-size: 0.9rem; background: rgba(56,189,248,0.1); padding: 0.2rem 0.6rem; border-radius: 0.3rem;">—</code>
+            </span>
+            <span style="color: #4b5563; font-family: 'Fira Code', monospace; font-size: 0.8rem;">LOGGED IN:
+                <code id="loggedInDisplay" style="color: #a78bfa; font-family: 'Fira Code', monospace; font-size: 0.9rem; background: rgba(167,139,250,0.1); padding: 0.2rem 0.6rem; border-radius: 0.3rem;">none</code>
+            </span>
+            <span id="setPasswordMsg" style="font-size: 0.75rem; color: var(--hacker-green); font-family: 'Fira Code', monospace;"></span>
+            <!-- Hidden elements still needed by app.js -->
+            <span id="currentPassDisplay" style="display:none;"></span>
+            <form id="setPasswordForm" style="display:none;"><input type="text" id="newPassword"></form>
+        </section>
+
+
+        <section class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-label">Total Attempts</div>
+                <div id="statAttempts" class="stat-value">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Speed (att/s)</div>
+                <div id="statSpeed" class="stat-value">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Wordlist Size</div>
+                <div id="statWordlist" class="stat-value">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Status</div>
+                <div id="statResult" class="stat-value">IDLE</div>
+            </div>
+        </section>
+
+        <div id="logs" class="terminal-logs">
+            <div class="log-entry info">System initialized. Waiting for command...</div>
+            <div class="log-entry info">Target detected: nexus-portal.internal</div>
+            <div class="log-entry info">Default user: admin_root</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
